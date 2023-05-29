@@ -2,13 +2,16 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import tensorflow as tf
+import cv2
 
 IMAGE_SIZE = 224
+BATCH_SIZE = 8
 class_names = ['battery', 'biological', 'cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 
 def preprocess_image(image):
-    image = image.resize((IMAGE_SIZE, IMAGE_SIZE))
     image = np.array(image)
+    image = cv2.resize(image, (IMAGE_SIZE, IMAGE_SIZE))
+    image = image / 255.0
     image = image.reshape(1, IMAGE_SIZE, IMAGE_SIZE, 3)
     return image
 

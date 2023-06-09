@@ -10,7 +10,7 @@ I'm using Python 3.10.11 for this project (So that I can utilize tensorflow GPU 
 pip install -r requirements.txt
 ```
 
-After installing the requirements, simply run...
+After installing the requirements, start the application with...
 
 ```terminal
 streamlit run image_classification.py
